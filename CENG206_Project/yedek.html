@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lesson Program</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		/* Style the tabs */
+		.tab {
+			overflow: hidden;
+			border: 1px solid #ccc;
+			background-color: #f1f1f1;
+			margin-top: 20px;
+		}
+
+		/* Style the buttons inside the tab */
+		.tab button {
+			background-color: inherit;
+			float: left;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			padding: 14px 16px;
+			transition: 0.3s;
+			font-size: 17px;
+			font-weight: bold;
+			color: #555;
+		}
+
+		/* Change background color of buttons on hover */
+		.tab button:hover {
+			background-color: #ddd;
+		}
+
+		/* Create an active/current tablink class */
+		.tab button.active {
+			background-color: #ccc;
+		}
+
+		/* Style the tab content */
+		.tabcontent {
+			display: none;
+			padding: 6px 12px;
+			border: 1px solid #ccc;
+			border-top: none;
+			font-size: 20px;
+		}
+        body {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% {
+                background-color:darkslategray;
+            }
+            100% {
+                background-color: white;
+            }
+        } 
+	</style>
+</head>
+<body>
+	<div class="tab">
+		<button class="tablinks" onclick="openTab(event, 'weekdays')" id="defaultOpen">Weekdays</button>
+		<button class="tablinks" onclick="openTab(event, 'lessons')">Lessons</button>
+			<button class="tablinks" onclick="openTab(event, 'classes')">Classes</button>
+	</div>
+
+	<div id="weekdays" class="tabcontent">
+		<h3>Weekdays</h3>
+		<p>Monday - Friday: 9am - 5pm</p>
+	</div>
+
+	<div id="lessons" class="tabcontent">
+		<h3>Lessons</h3>
+		<p>We offer a wide range of lessons, including:</p>
+		<ul>
+			<li>CENG114 - Computer Programming</li>
+			<li>CHEM101 - GENERAL CHEMISTRY</li>
+			<li>MATH104 - Applied Linear Algebra</li>
+			<li>MATH102 - CALCULUS II</li>
+            <li>MATH106 - PROBABILITY AND STATISTICS</li>
+			<li>PHYS102 - PHYSICS II</li>
+			<li>TDL102 - TURK DILI II</li>
+			<li>TIT101 - TURK INKILAP TARIHI I</li>
+            <li>CENG202 - Data Structures</li>
+			<li>CENG204 - Computer System Architecture</li>
+			<li>CENG206 - Programming Languages</li>
+			<li>ENGR202 - ENGINEERING MATHEMATICS II</li>
+            <li>ENGR254 - PRINCIPLES OF BODY MOVEMENT</li>
+			<li>CENG302 - Formal Languages and Automata Theory</li>
+			<li>CENG304 - Computer Networks</li>
+			<li>CENG306 - Software Engineering</li>
+            <li>CENG310 - Human Computer Interaction</li>
+			<li>CENG311 - WEB TECHNOLOGY APPLICATIONS</li>
+			<li>CENG342 - Parallel Programming I</li>
+			<li>CENG404 - Special Topics in CENG II</li>
+            <li>CENG415 - Applications of Computer Graphics</li>
+			<li>CENG424 - COMPUTER SIMULATION AND MODELLING</li>
+            <li>CENG427 - Programming of Mobile Devices</li>
+			<li>CENG428 - NEURAL NETWORKS</li>
+            <li>CENG431 - INTRODUCTION TO DESING PATTERNS</li>
+			<li>CENG451 - Principles of Cyber Physical Systems</li>
+            <li>CENG462 - GAME PROGRAMMING PIPELINE</li>
+			<li>CENG465 - INTERNET OF THINGS AND ITS APPLICATIONS</li>
+            <li>CENG474 - COMMUNICATION AND NETWORK SECURITY</li>
+		</ul>
+	</div>
+
+	<div id="classes" class="tabcontent">
+		<h3>Classes</h3>
+		<p>Our classes are held in various locations, including:</p>
+		<ul>
+			<li>B403;100</li>
+			<li>C501;60</li>
+			<li>B503;120</li>
+            <li>C408;52</li>
+		</ul>
+	</div>
+
+    
+	<script>
+		function openTab(evt, tabName) {
+			// Declare all variables
+			var i, tabcontent, tablinks;
+
+			// Get all elements with class="tabcontent" and hide them
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+
+			// Get all elements with class="tablinks" and remove the class "active"
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+
+		// Show the current tab, and add an "active" class to the button that opened the tab
+		document.getElementById(tabName).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById("defaultOpen").click();
+</script>
+</body>
+</html>
