@@ -34,4 +34,14 @@ h2 {
     height: 325px;
     width: 1200px;
   }
-  
+  body {
+    animation: blink 1s infinite;
+  }
+  @keyframes blink {
+    50% {
+      background-color:darkslategray;
+    }
+    100% {
+      background-color: white;
+    }
+  } 
