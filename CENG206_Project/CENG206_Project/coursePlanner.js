@@ -1,3 +1,7 @@
+import path from 'path';
+import fs from 'fs';
+import csv from 'csv-parser';
+
 const path = require('path');
 const fs = require('fs');
 const csv = require('csv-parser');
